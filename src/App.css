@@ -72,16 +72,22 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 1.8em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 1.8em #61dafbaa);
 }
 
 @keyframes logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -162,18 +168,18 @@
   margin-top: 0.8rem;
 
   .colorBox {
-  width: 45px;
-  height: 45px;
-  border-radius: 5px;
-  cursor: pointer; // make clickable obvious
-  border: 1px solid var(--border-color, #ccc);
-  transition: transform 0.15s ease;
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    cursor: pointer; /* make clickable obvious */
+    border: 1px solid var(--border-color, #ccc);
+    transition: transform 0.15s ease;
 
-  &:hover {
-    transform: scale(1.1);
+    &:hover {
+      transform: scale(1.1);
+    }
   }
-}
-
+} /* <-- fixed missing closing bracket for paletteRow */
 
 .metricsContainer {
   text-align: center;
