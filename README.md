@@ -5,6 +5,13 @@ Hey there! This is a fun little browser-based tool I built that extracts the mai
 K is fixed @ 10, but you can alter the arg to the helper in /src/colourextract/colourhelper.js
 Granularity is every nth pixel that is sampled. There's no math just use 50 and you'll probably be fine.
 
+
+
+
+
+**Github pages link live:** [https://2of.github.io/Colour-Extractor-Image-Web/](https://2of.github.io/Colour-Extractor-Image-Web/)
+
+
 ## How it works
 
 1. **Upload or drag & drop an image** — any photo works.
