@@ -1,16 +1,33 @@
-# React + Vite
+# Colour Extractor 🌈
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hey there! This is a fun little browser-based tool I built that extracts the main colours from most image types. Perfect for design inspiration, playful experiments, or just seeing what vibes your photos give off. All it does is Image > K means > Average of clusters.
 
-Currently, two official plugins are available:
+K is fixed @ 10, but you can alter the arg to the helper in /src/colourextract/colourhelper.js
+Granularity is every nth pixel that is sampled. There's no math just use 50 and you'll probably be fine.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## How it works
 
-## React Compiler
+1. **Upload or drag & drop an image** — any photo works.
+2. **Pick the number of colours** you want to extract. More colours = more detailed palette.
+3. **Adjust granularity** (pixels sampled) if you want a faster or more precise extraction.
+4. **Click Start** — the site will process the image and show:
+   - Your extracted palette of colours
+   - The total SSD / inertia (a measure of how “tight” the clusters are, there's no real scale and the numbers are big and scary because it's just rgb space)
+5. **Click any colour** to copy its hex code to your clipboard.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Behind the scenes
 
-## Expanding the ESLint configuration
+This uses a **tiny K-means clustering implementation** running entirely in your browser. Basically, K-means tries to find `k` representative colours by grouping pixels that look similar — those groups’ average colours become your palette.  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **SSD / inertia** is just the total squared distance of each pixel to its assigned cluster — lower means the colours fit the image better.  
+
+
+
+## Tech stack
+
+- React + Vite
+- Pure JS K-means clustering
+- SCSS for styling
+- GitHub Pages for hosting
+
+
