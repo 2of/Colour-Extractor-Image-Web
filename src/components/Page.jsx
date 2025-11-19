@@ -67,10 +67,14 @@ export const Page = () => {
 
       {/* Header */}
       <div className="header">
-        <h1>Colour Extractor</h1>
+        <h1>K-means / Clustering Image Colour Extractor</h1>
                 <p className="subtitle">This page uses (browserside) K-means clustering to find the best 
                     (average) colours in an image
                 </p>
+<a href="https://github.com/2of/Colour-Extractor-Image-Web">
+  <button>Code</button>
+</a>
+
         <p className="subtitle">Upload or drag an image to begin.</p>
       </div>
 
